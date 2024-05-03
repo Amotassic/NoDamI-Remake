@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "nodami",
+  "version": "0.1",
+  "name": "No Damage Immunity",
+  "description": "",
+  "authors": [
+    "ProfHug0",
+    "Mirkiri",
+    "Amotassic"
+  ],
+  "contact": {
+    "sources": "https://github.com/Amotassic/NoDamI-Remake"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.amotassic.nodami.NoDamI"
+    ]
+  },
+  "mixins": [
+    "nodami.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": ">=1.20"
+  }
+}
