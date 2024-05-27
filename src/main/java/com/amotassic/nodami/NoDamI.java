@@ -6,10 +6,12 @@ import com.amotassic.nodami.interfaces.EntityKnockbackCallback;
 import com.amotassic.nodami.interfaces.PlayerAttackCallback;
 import com.amotassic.nodami.interfaces.PlayerEntityAccessor;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.kyrptonaught.kyrptconfig.config.ConfigManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
@@ -130,6 +132,15 @@ public class NoDamI implements ModInitializer {
                 }
             }
             return ActionResult.PASS;
+        });
+        ServerTickEvents.END_SERVER_TICK.register((server) -> {
+            for (ServerWorld world : server.getWorlds()) {
+                for (PlayerEntity player : world.getPlayers()) {
+                    if (config.noAttackCD) {
+                        player.lastAttackedTicks = 1145;
+                    }
+                }
+            }
         });
     }
 }

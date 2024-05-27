@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "nodami",
-  "version": "0.1",
+  "version": "0.1.1",
   "name": "No Damage Immunity",
   "description": "",
   "authors": [
@@ -26,5 +26,6 @@
     "fabricloader": ">=0.14.9",
     "fabric": "*",
     "minecraft": ">=1.20"
-  }
+  },
+  "accessWidener": "noDamI.accesswidener"
 }

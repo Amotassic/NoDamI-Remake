@@ -8,6 +8,9 @@ public class NodamiConfig implements AbstractConfigFile {
     @Comment("How many ticks of i-frames does an entity get when damaged, from 0 (default), to 2^31-1 (nothing can take damage)\n实体受到伤害时获得多少刻伤害免疫，可以设置为从0到 2^31-1 之间任意一个数")
     public int iFrameInterval = 0;
 
+    @Comment("No attack cooldown, like bedrock edition      取消攻击冷却")
+    public boolean noAttackCD = false;
+
     @Comment("Are players excluded from this mod (if true, players will always get 10 ticks of i-frames on being damaged)\n设置为true时，所有玩家在受到伤害时依然会获得伤害免疫")
     public boolean excludePlayers = false;
 
